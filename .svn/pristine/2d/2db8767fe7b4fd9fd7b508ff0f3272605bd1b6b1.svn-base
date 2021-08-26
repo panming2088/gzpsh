@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ly_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                layout="@layout/common_patrol_toolbar"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/iv_arrow"/>
+
+            <TextView
+                android:id="@+id/tv_new_title"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/top_bar_height"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/agmobile_white"
+                android:textSize="@dimen/text_size_first" />
+
+            <ImageView
+                android:id="@+id/iv_arrow"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/padding_5"
+                android:layout_toRightOf="@id/tv_new_title"
+                android:src="@mipmap/ic_last_down"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/agmobile_white"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="2dp"
+                app:tabBackground="@color/agmobile_white"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/colorPrimary"
+                app:tabSelectedTextColor="@color/colorPrimary"
+                app:tabTextAppearance="@style/TabLayoutTextStyle"
+                app:tabTextColor="#000" />
+        </LinearLayout>
+
+        <com.augurit.agmobile.gzpssb.pshpublicaffair.view.yviewpager.YViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            app:orientation="vertical" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/progress_linearlayout"
+        android:layout_width="@dimen/drawer_layout_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/agmobile_white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/ll_facility_condition"
+            layout="@layout/view_facility_affair_failter_condition"
+            android:visibility="visible" />
+
+        <include
+            android:id="@+id/ll_event_condition"
+            layout="@layout/view_event_affair_filter_condition"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/ll_psh_event_condition"
+            layout="@layout/view_psh_affair_failter_condition"
+            android:visibility="gone" />
+        <include
+            android:id="@+id/ll_psh_wtsb_condition"
+            layout="@layout/view_wtsb_filter_condition"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/ll_psh_patrol_condition"
+            layout="@layout/view_psh_dialy_patrol_condition"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

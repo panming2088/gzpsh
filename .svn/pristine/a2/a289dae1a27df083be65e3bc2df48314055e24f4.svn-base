@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout android:id="@+id/ll_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_rect_4round_gray">
+zz
+        <EditText android:id="@+id/et_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_weight="1"
+            android:hint="请输入类型名"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:background="@color/transparent"/>
+        <ImageView android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@mipmap/ic_search_2"/>
+    </LinearLayout>
+
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="70dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <com.augurit.agmobile.gzps.drainage_unit_monitor.widget.AutoLoadRecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_rect_10round_white"
+                        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                        tools:itemCount="4"
+                        tools:listitem="@layout/item_monitor_jbj"/>
+
+                    <FrameLayout android:id="@+id/fl_loading"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white">
+                        <ProgressBar
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"/>
+                    </FrameLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/fl_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+            <TextView android:id="@+id/tv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="暂无数据"
+                android:textColor="@color/black"
+                android:textSize="15sp"/>
+        </FrameLayout>
+
+        <Button android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_blue"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:layout_gravity="center_horizontal"
+            tools:layout_gravity="bottom|center_horizontal"
+            android:text="提交"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+    </FrameLayout>
+
+</LinearLayout>

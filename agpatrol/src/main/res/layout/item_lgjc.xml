@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:gravity="center_vertical">
+    <TextView android:id="@+id/tv_left"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="所在行政区"
+        android:textColor="#777777"
+        android:textSize="15sp"/>
+
+    <RadioButton android:id="@+id/rb_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:button="@drawable/cb_check"
+        android:text="是"
+        android:textColor="#333333"
+        android:textSize="15sp"/>
+    <RadioButton android:id="@+id/rb_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:paddingLeft="7dp"
+        android:button="@drawable/cb_check"
+        android:text="否"
+        android:textColor="#333333"
+        android:textSize="15sp"/>
+</LinearLayout>

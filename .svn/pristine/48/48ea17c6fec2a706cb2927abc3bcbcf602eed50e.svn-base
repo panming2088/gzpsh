@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_patrol_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.augurit.agmobile.gzps.common.widget.TakePhotoTableItem
+                android:id="@+id/take_photo_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:photoText="添加照片" />
+            <!--位置-->
+           <!-- <LinearLayout
+                android:id="@+id/ll_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />-->
+
+            <LinearLayout
+                android:id="@+id/rl_select_location_container"
+                style="@style/PatrolUploadItemOuterContainerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical"/>
+
+
+            <!-- 基本信息-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical">
+
+                <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+                    android:id="@+id/spinneritem_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:spinnertextViewName="区" />
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_town"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:editTextHint="XX街道(镇)"
+                    app:textViewName ="镇街" />
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_village"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:editTextHint="XX社区(村)"
+                    app:textViewName="社区居委" />
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textViewName="名称" />
+
+            </LinearLayout>
+            <!--其他信息-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/run_one"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="是否完好"
+                    android:textSize="14sp" />
+
+                <RadioGroup
+                    android:id="@+id/rb_sfwh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp">
+
+                    <RadioButton
+                        android:checked="true"
+                        android:id="@+id/rb_sfwh_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <RadioButton
+                        android:id="@+id/rb_sfwh_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="否" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/run_two"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="是否漏水"
+                    android:textSize="14sp" />
+
+                <RadioGroup
+                    android:id="@+id/rb_sfls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_sfls_yes"
+                        android:checked="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <RadioButton
+                        android:id="@+id/rb_sfls_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="否" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/run_three"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="所在位置"
+                    android:textSize="14sp" />
+
+                <RadioGroup
+                    android:id="@+id/rb_szwz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_szwz_yes"
+                        android:checked="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="排水单元内部" />
+
+                    <RadioButton
+                        android:id="@+id/rb_szwz_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="公共区域" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical">
+            <!--标识描述-->
+          <!--  <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical">
+
+                <com.augurit.agmobile.gzps.common.widget.TextFieldTableItem
+                    android:id="@+id/textitem_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fieldeditMaxLength="200"
+                    app:fieldtextViewName="上报说明" />
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/upload_bottom_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical">
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/tableitem_current_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textViewName="上报人" />
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/tableitem_current_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textViewName="修改时间" />
+            </LinearLayout>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:animateLayoutChanges="true"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_upload"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="提交"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/sel_btn_upload"
+                    android:textColor="@color/agmobile_white"
+                    android:textSize="@dimen/text_size_first" />
+                <Button
+                    android:id="@+id/btn_delete"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="删除"
+                    android:background="@drawable/sel_btn_delete"
+                    android:textColor="@color/agmobile_white"
+                    android:textSize="@dimen/text_size_first" />
+                <Button
+                    android:id="@+id/btn_edit"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="编辑"
+                    android:background="@drawable/sel_btn_upload"
+                    android:textColor="@color/agmobile_white"
+                    android:textSize="@dimen/text_size_first" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout android:id="@+id/ll_container"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include android:id="@+id/ll_gw"
+            layout="@layout/item_monitor_info"/>
+
+        <include android:id="@+id/ll_check"
+            layout="@layout/item_monitor_info"/>
+
+        <include android:id="@+id/ll_train"
+            layout="@layout/item_monitor_info"/>
+
+        <include android:id="@+id/ll_maintain"
+            layout="@layout/item_monitor_info"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ll_reporter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_gravity="bottom|center_horizontal"
+        android:orientation="vertical">
+        <TextView android:id="@+id/tv_reporter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            tools:text="上报人：吴亦凡 2021-05-06 15:22"/>
+        <Button android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_blue"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:text="保存"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</FrameLayout>

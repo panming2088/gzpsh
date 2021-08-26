@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F4F6F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_jjc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="14.5dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:text="接驳井监测"/>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.TakePhotoItemProblem
+            android:id="@+id/photo_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:photoText="添加监测照片"/>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.TextItemProblem
+            android:id="@+id/text_item_jbjtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:textViewName="接驳井类型"
+            android:background="@color/white"/>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.ProblemTypeView
+            android:id="@+id/problem_type_sfys"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ptv_title="晴天是否有水流动"
+            app:ptv_title_color="#707376"
+            android:background="@color/white"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.ProblemTypeView
+            android:id="@+id/problem_type_sfds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ptv_title="接驳井是否被堵塞"
+            app:ptv_title_color="#707376"
+            android:background="@color/white"/>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.TextItemProblem
+            android:id="@+id/text_item_gdgj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="接驳管道管径(mm)"
+            app:editTextMaxLength="10"
+            android:background="@color/white"/>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.TextItemProblem
+            android:id="@+id/text_item_ad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="氨氮浓度(mg/L)"
+            app:editTextMaxLength="10"
+            android:background="@color/white"/>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.TextItemProblem
+            android:id="@+id/text_item_cod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="COD浓度(mg/L)"
+            app:editTextMaxLength="10"
+            android:background="@color/white"/>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.TextItemProblem
+            android:id="@+id/text_item_rwsll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="日污水流量(吨)"
+            app:editTextMaxLength="10"
+            android:background="@color/white"/>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.TimePickerItem
+            android:id="@+id/text_item_jcsj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tpi_title="监测时间"
+            android:background="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="14.5dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:text="地面检查"/>
+
+        <LinearLayout
+            android:id="@+id/ll_inside_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="14.5dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:text="井盖检查"/>
+
+        <LinearLayout
+            android:id="@+id/ll_outside_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <com.augurit.agmobile.gzps.drainage_unit_monitor.view.TextFieldItemProblem
+            android:id="@+id/problem_desc_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:fieldeditMaxLength="200"
+            app:fieldtextViewName="问题描述"
+            android:background="@color/white"/>
+
+        <LinearLayout
+            android:id="@+id/ll_event_process1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="正在加载问题处理流程..."
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tv_isbyself"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="已自行处理"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="管理层意见："
+                android:textColor="@color/dust_grey"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_advice1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/radio_bg"
+                android:text="重置"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_commit"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/radio_bg"
+                android:text="保存"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

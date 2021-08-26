@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingLeft="15dp"
+    android:paddingTop="7dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="7dp">
+
+    <TextView android:id="@+id/tv_seq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="1"
+        android:textSize="15sp"
+        android:textColor="#333333"/>
+
+    <TextView android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        tools:text="污水"
+        android:textSize="15sp"
+        android:textColor="#333333"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"/>
+
+    <TextView android:id="@+id/tv_monitor_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        tools:text="未监管"
+        android:textSize="15sp"
+        android:textColor="#22AC38"
+        android:background="@drawable/bg_rect_round_green"/>
+
+    <ImageView android:id="@+id/iv_location"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:src="@mipmap/ic_location"/>
+
+    <TextView android:id="@+id/tv_monitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="监管"
+        android:textSize="15sp"
+        android:textColor="#1A7AFE"
+        android:background="@drawable/bg_rect_round_blue"/>
+</LinearLayout>

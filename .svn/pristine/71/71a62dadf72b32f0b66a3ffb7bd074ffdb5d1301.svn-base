@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/common_patrol_toolbar" />
+
+    </FrameLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.esri.android.map.MapView
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.augurit.agmobile.patrolcore.editmap.widget.LocationMarker
+                android:id="@+id/locationMarker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                tools:visibility="visible"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_compass_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical" />
+                <LinearLayout
+                    android:id="@+id/ll_layer_url_init_fail"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/layer_url_init_fail_msg_color"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="right|center_vertical"
+                            android:src="@mipmap/ic_alert_yellow" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="left|center_vertical"
+                            android:gravity="center"
+                            android:text="@string/layer_url_init_fail_msg" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/ll_search_obj1"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        android:clickable="true"
+                        android:orientation="vertical"
+                        android:scaleType="fitCenter">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="1dp"
+                            android:src="@mipmap/ic_search1" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        android:scaleType="fitCenter">
+
+                        <ImageView
+                            android:id="@+id/btn_layer"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="1dp"
+                            android:src="@mipmap/phone_ic_layers_white_24dp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_legend"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        android:scaleType="fitCenter">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="1dp"
+                            android:src="@mipmap/ic_legend" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.augurit.agmobile.patrolcore.common.widget.LocationButton
+                android:id="@+id/locationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="50dp"
+                android:layout_marginRight="16dp" />
+
+            <com.augurit.agmobile.mapengine.common.widget.scaleview.MapScaleView
+                android:id="@+id/scale_view"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_component_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/agmobile_white"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/ll_bottm"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_below="@id/btn_login" />
+
+        <FrameLayout
+            android:id="@+id/map_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_rect_top_round_white"
+            android:orientation="vertical"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="0dp"
+            app:layout_behavior="com.augurit.agmobile.gzps.drainage_unit_monitor.bottomsheet.DrainageAnchorSheetBehavior">
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/map_bottom_sheet2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_rect_top_round_white"
+            android:orientation="vertical"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="0dp"
+            app:layout_behavior="com.augurit.agmobile.gzps.drainage_unit_monitor.bottomsheet.DrainageAnchorSheetBehavior">
+        </FrameLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

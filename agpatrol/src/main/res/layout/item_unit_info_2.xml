@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:gravity="center_vertical">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/ll_invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="完成达标创建时间"
+            android:textColor="#777777"
+            android:textSize="15sp"/>
+
+        <LinearLayout android:id="@+id/ll_visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/tv_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="权属人"
+                android:textColor="#777777"
+                android:textSize="15sp"/>
+
+            <EditText android:id="@+id/et_input_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:singleLine="true"
+                tools:text="李明"
+                android:textColor="#333333"
+                android:background="@drawable/bg_rect_5round_graystroke"
+                android:textSize="15sp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <TextView android:id="@+id/tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="联系电话"
+            android:textColor="#777777"
+            android:textSize="15sp"/>
+
+        <EditText android:id="@+id/et_input_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:singleLine="true"
+            tools:text="12345678901"
+            android:textColor="#333333"
+            android:background="@drawable/bg_rect_5round_graystroke"
+            android:textSize="15sp"/>
+    </LinearLayout>
+</LinearLayout>

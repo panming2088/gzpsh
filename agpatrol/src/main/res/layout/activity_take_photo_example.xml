@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:clickable="false"
+              android:orientation="vertical">
+    <include layout="@layout/common_patrol_toolbar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/agmobile_red"
+                android:text="[注] 请查看手机相机的[设置]-[水印]，如果有水印功能，请开启"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"/>
+
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:background="@color/gray"
+                android:src="@drawable/photo_shuiyin"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="1px"
+                android:background="#919391"/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[1] 俯视图：手机与井盖平行，并使井盖上字体正向可读，俯拍"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="190dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:background="@color/gray"
+                android:src="@drawable/take_photo_example_1" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[2] 平视图：手机竖直寻找建筑标志物或门牌号拍摄，井在照片中"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"/>
+            <ImageView
+                android:layout_width="230dp"
+                android:layout_gravity="center"
+                android:layout_height="250dp"
+                android:src="@drawable/take_photo_example_3"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="1px"
+                android:background="#919391"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[3] 方位图：手机竖直沿街道某一方向拍摄，井在照片中"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"
+                android:src="@drawable/take_photo_example_2"/>
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_gravity="center"
+                android:layout_height="250dp"
+                android:src="@drawable/take_photo_example_2"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="1px"
+                android:background="#919391"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[4] 揭井图：如果有开井，请拍摄1-3张照片，分别是揭开的井盖、贴牌号码、安全网及井内状况"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"/>
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_gravity="center"
+                android:layout_height="250dp"
+                android:background="@color/gray"
+                android:src="@drawable/example_kaijin_2"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="1px"
+                android:background="#919391"/>
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_gravity="center"
+                android:layout_height="250dp"
+                android:background="@color/gray"
+                android:src="@drawable/example_kaijin_4"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="1px"
+                android:background="#919391"/>
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_gravity="center"
+                android:layout_height="250dp"
+                android:background="@color/gray"
+                android:src="@drawable/example_kaijin_1"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="1px"
+                android:background="#919391"/>
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_gravity="center"
+                android:layout_height="250dp"
+                android:background="@color/gray"
+                android:src="@drawable/example_kaijin_3"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="1px"
+                android:background="#919391"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

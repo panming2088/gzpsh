@@ -1,0 +1,218 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('key/pshsb.jks')
+            storePassword '123456'
+            keyAlias 'aoge'
+            keyPassword '123456'
+        }
+        debug {
+            storeFile file('key/pshsb.jks')
+            storePassword '123456'
+            keyAlias 'aoge'
+            keyPassword '123456'
+        }
+    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.augurit.agmobile.gzpssb"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 70
+        versionName "1.0.0.5.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+/*        ndk {
+//             设置支持的 SO 库构架，注意这里要根据你的实际情况来设置
+            abiFilters 'armeabi', 'x86',"armeabi-v7a"
+        }*/
+        ndk {
+            abiFilters 'armeabi'//,"armeabi-v7a"
+        }
+//        signingConfig signingConfigs.release
+//        generatedDensities = []
+    }
+//    aaptOptions {
+//        additionalParameters "--no-version-vectors"
+//    }
+
+//
+//    //以下分包配置productFlavors 在农务和排水合拼的时候要去掉
+//    //同时修改 AndroidMannifest下的 provider 配置
+//    productFlavors {
+//        gzpssb {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "gzpssb"]
+//            manifestPlaceholders = [provider_name: "com.augurit.agmobile.gzpssb.FileProvider"]
+//            applicationId 'com.augurit.agmobile.gzpssb'
+//            resValue "string", "app_name", "广州排水户巡检"
+//        }
+//        gzps {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "gzps"]
+//            manifestPlaceholders = [provider_name: "com.augurit.agmobile.gzps.FileProvider"]
+//            applicationId 'com.augurit.agmobile.gzps'
+//            resValue "string", "app_name", "广州排水巡检"
+//        }
+//    }
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            //是否启用资源优化
+            minifyEnabled false
+            //指定混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            manifestPlaceholders.put("baiduKey", "SPbWYfMwAMR34E4TmNvKejd4qON6FzcT")
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            manifestPlaceholders.put("baiduKey", "SPbWYfMwAMR34E4TmNvKejd4qON6FzcT")
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+
+        //去掉Component里面百度语音相关的so文件
+        exclude 'lib/armeabi/libBDSpeechDecoder_V1.so'
+        exclude 'lib/armeabi/libBDVoiceRecognitionClient_MFE_V1_s2.so'
+        exclude 'lib/armeabi/libbdEASRAndroid.v1.9.11.so'
+        exclude 'lib/armeabi/libbd_easr_s1_merge_normal_20151216.dat.so'
+        exclude 'lib/armeabi/libbd_etts.so'
+        exclude 'lib/armeabi/libbdtts.so'
+        exclude 'lib/armeabi/libgnustl_shared.so'
+
+        //去掉photoidentify中的图像识别库
+        exclude 'lib/armeabi/libjpeg.so'
+        exclude 'lib/armeabi/liblept.so'
+        exclude 'lib/armeabi/libtess.so'
+
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDir(['libs']) // 引用so文件
+        }
+    }
+
+    applicationVariants.all { variant ->
+        def now = new Date()
+        variant.outputs.all {
+            outputFileName = "psh-${buildType.name}-${now.format("yyyyMMddHHmm")}.apk"
+        }
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+configurations.all {
+    resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile ("android.arch.persistence.room:runtime:1.0.0") {
+        exclude group: 'com.android.support'
+    }
+    //compile project(':defaultview')
+    compile project(':patrolcore')
+    compile 'com.android.support:multidex:1.0.1'
+    testCompile 'junit:junit:4.12'
+    /**
+     *     符合google 底部栏设计规范的库，库的地址：https://github.com/roughike/BottomBar
+     */
+    compile ('com.roughike:bottom-bar:2.1.1') {
+        exclude group: 'com.android.support'
+    }
+    compile 'com.github.clans:fab:1.6.4'
+    compile "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support.constraint:constraint-layout:1.1.3"
+    /**
+     *     仿微信的底部栏效果，库的地址在：https://github.com/yingLanNull/AlphaTabsIndicator
+     */
+    compile ('com.yinglan.alphatabs:library:1.0.3') {
+        exclude group: 'com.android.support'
+    }
+    /**
+     *  具有上拉更新下滑刷新更多的recyclerview
+     */
+    compile ('com.jcodecraeer:xrecyclerview:1.3.2') {
+        exclude group: 'com.android.support'
+    }
+    compile ('com.jude:rollviewpager:1.2.9') {
+        exclude group: 'com.android.support'
+    }
+    //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    //compile files('libs/commons-codec-1.4.jar')
+    compile ('com.google.android:flexbox:0.2.3') {
+        exclude group: 'com.android.support'
+    }
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    //compile 'com.coldmoqiuli:banners:1.0.0'
+    compile 'q.rorbin:badgeview:1.1.3'
+    compile ('com.bigkoo:convenientbanner:2.0.5') {
+        exclude group: 'com.android.support'
+    }
+    compile(name: 'CallKit-release', ext: 'aar')
+    compile(name: 'CallLib-release', ext: 'aar')
+    compile(name: 'IMKit-release', ext: 'aar')
+    compile(name: 'IMLiB-release', ext: 'aar')
+    // compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+    compile "me.leolin:ShortcutBadger:1.1.19@aar"
+
+//    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+//    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    compile 'com.youth.banner:banner:1.4.9'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    /*rx-android-java*/
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.trello:rxlifecycle:1.0'
+    compile ('com.trello:rxlifecycle-components:1.0') {
+        exclude group: 'com.android.support'
+    }
+    /*rotrofit*/
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile ('com.google.android.gms:play-services-appindexing:8.4.0') {
+        exclude group: 'com.android.support'
+    }
+    //支持String 类型的返回
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
+    compile ('com.wenwenwen888:searchbox:1.0.0') {
+        exclude group: 'com.android.support'
+    }
+    compile project(path: ':multi-image-selector')
+
+    compile 'com.zhihu.android:matisse:0.4.3'
+
+}

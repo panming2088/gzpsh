@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+        android:id="@+id/pb_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/rv_pshaffair"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_see_map"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/map_round_bg"
+        android:elevation="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/seeonmap"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#8f000000">
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_gravity="center"
+            android:layout_height="40dp" />
+
+    </FrameLayout>
+</RelativeLayout>
+

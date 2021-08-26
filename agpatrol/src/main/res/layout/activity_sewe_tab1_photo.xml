@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:orientation="vertical">
+    <include layout="@layout/common_patrol_toolbar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/agmobile_red"
+                android:text="[注] 请查看手机相机的[设置]-[水印]，如果有水印功能，请开启"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"/>
+
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:background="@color/gray"
+                android:src="@drawable/photo_shuiyin"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="相机水印设置界面"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="1px"
+                android:background="#919391"/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[1] 平视图：手机正对着门面，能够看清整个门面及门面上排水户名称"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/gray"
+                android:src="@drawable/sew_tab1_pto_1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="平视图"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[2] 楼栋图：手机仰视拍摄排水户所在楼栋"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"/>
+            <ImageView
+                android:layout_width="230dp"
+                android:layout_gravity="center"
+                android:layout_height="250dp"
+                android:src="@drawable/sew_tab1_pto_2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="楼栋图"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="1px"
+                android:background="#919391"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[3] 方位图：手机竖直沿街道某一方向拍摄，排水户门面在照片中"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"
+                android:src="@drawable/take_photo_example_2"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sew_tab1_pto_3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="方位图"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="1px"
+                android:background="#919391"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[4] 门牌图：如果有门牌挂牌，正面拍摄门牌信息 "/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_height="1px"
+                android:background="#919391"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@color/gray"
+                android:src="@drawable/sew_tab1_pto_4"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

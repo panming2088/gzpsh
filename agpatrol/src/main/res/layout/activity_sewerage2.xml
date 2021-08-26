@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data class = "com.augurit.agmobile.gzpssb.SewerageActivityData2">
+
+        <variable
+            name="sewerageBean"
+            type="com.augurit.agmobile.gzpssb.bean.SewerageItemBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <!--2018-4-12 oyzb改-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/tv_sewerage_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:padding="5dp"
+                android:text=""
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="调查完毕"
+                android:background="@drawable/round_orange_rectangle2"
+                android:textColor="@color/agmobile_white"
+                android:singleLine="true"
+                android:padding="4dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/tv_fg_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#1DD3DE"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                />
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="2dp"
+              android:background="#1DD3DE"/>
+        </LinearLayout>
+        <!--    <android.support.v4.view.ViewPager
+                android:id="@+id/viewPage_activity_sewerage"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#ffffff" />-->
+        <FrameLayout
+            android:id="@+id/viewPage_activity_sewerage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#ffffff" />
+    </LinearLayout>
+
+
+
+</layout>

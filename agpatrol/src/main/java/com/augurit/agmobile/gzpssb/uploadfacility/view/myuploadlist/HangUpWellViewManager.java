@@ -1,0 +1,177 @@
+package com.augurit.agmobile.gzpssb.uploadfacility.view.myuploadlist;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.augurit.agmobile.gzps.R;
+import com.augurit.agmobile.gzps.common.widget.TextItemTableItem;
+import com.augurit.agmobile.gzpssb.uploadfacility.model.HangUpWellBean;
+import com.augurit.am.fw.utils.StringUtil;
+import com.augurit.am.fw.utils.TimeUtil;
+
+import java.util.Date;
+
+/**
+ * 在详情界面中用于生成“上报信息”表的类
+ *
+ * @author 创建人 ：xuciluan
+ * @version 1.0
+ * @package 包名 ：com.augurit.agmobile.gzps.identification
+ * @createTime 创建时间 ：17/11/10
+ * @modifyBy 修改人 ：xuciluan
+ * @modifyTime 修改时间 ：17/11/10
+ * @modifyMemo 修改备注：
+ */
+
+public class HangUpWellViewManager {
+
+    private Context mContext;
+    private View root;
+
+    private TextItemTableItem tableitem_current_time;
+    private TextItemTableItem tableitem_current_user;
+    private HangUpWellBean uploadedFacility;
+    private TextItemTableItem tableitem_last_modified_time;
+    private TextItemTableItem tableitem_direct_org;
+    private View ll__facility_problem;
+
+    private boolean mIsShiPaiOrKexuecheng = false;
+    private TextItemTableItem tableitem_jb_bh;
+    private TextItemTableItem tableitem_jb_type;
+    private TextItemTableItem tableitem_jb_addr;
+    private TextItemTableItem textitem_dy_name;
+    private TextItemTableItem textitem_dy_type;
+
+    public HangUpWellViewManager(
+            Context context,
+            HangUpWellBean modifiedIdentification) {
+
+        this.mContext = context;
+        this.uploadedFacility = modifiedIdentification;
+        initView();
+        initData();
+    }
+
+    public HangUpWellViewManager(
+            Context context,
+            HangUpWellBean modifiedIdentification, boolean isShiPaiOrKexuecheng) {
+
+        this.mContext = context;
+        this.uploadedFacility = modifiedIdentification;
+        mIsShiPaiOrKexuecheng = isShiPaiOrKexuecheng;
+        initView();
+        initData();
+
+    }
+
+    private void initData() {
+        if (uploadedFacility != null) {
+
+            Long date = uploadedFacility.getMarkTime();
+            if (date == null) {
+                tableitem_current_time.setText("");
+            }
+            if (date != null) {
+                tableitem_current_time.setText(TimeUtil.getStringTimeYMDMChines(new Date(date)));
+            }
+            tableitem_jb_bh.setText(uploadedFacility.getJhjObjectId());
+            if (!StringUtil.isEmpty(uploadedFacility.getAttrTwo())) {
+                tableitem_jb_type.setText(uploadedFacility.getAttrTwo());
+            } else {
+                tableitem_jb_type.setText("");
+            }
+            if (!StringUtil.isEmpty(uploadedFacility.getJhjAddr())) {
+                tableitem_jb_addr.setText(uploadedFacility.getJhjAddr());
+            } else {
+                tableitem_jb_addr.setText("");
+            }
+            if (!StringUtil.isEmpty(uploadedFacility.getPshName())) {
+                textitem_dy_name.setText(uploadedFacility.getPshName());
+            } else {
+                textitem_dy_name.setText("");
+            }
+            if (!StringUtil.isEmpty(uploadedFacility.getPshType3())) {
+                textitem_dy_type.setText(uploadedFacility.getPshType3());
+            } else {
+                textitem_dy_type.setText("");
+            }
+
+            /**
+             * 更新时间
+             */
+            Long updateTime = null;
+            if (updateTime != null && updateTime > 0 && !updateTime.equals(date)) {
+                tableitem_last_modified_time.setText(TimeUtil.getStringTimeYMDMChines(new Date(updateTime)));
+                tableitem_last_modified_time.setVisibility(View.VISIBLE);
+                tableitem_last_modified_time.setReadOnly();
+            }
+
+            /**
+             *  上报单位,判断规则：
+             *  判断directOrg是否不为空，如果不为空显示directOrg，
+             *  否则判断superviseOrg是否为空，如果superviseOrg为空，那么隐藏上报单位item
+             */
+            String directOrg = null;
+
+            if (directOrg == null) {
+                tableitem_direct_org.setVisibility(View.GONE);
+            } else {
+                tableitem_direct_org.setText(directOrg);
+                tableitem_direct_org.setVisibility(View.VISIBLE);
+            }
+
+            tableitem_current_time.setVisibility(View.VISIBLE);
+            tableitem_current_user.setText(uploadedFacility.getMarkPerson());
+            tableitem_current_time.setReadOnly();
+            tableitem_current_user.setReadOnly();
+
+        }
+    }
+
+    public void addTo(ViewGroup container) {
+        container.removeAllViews();
+        container.addView(root);
+    }
+
+    /**
+     *
+     */
+    private void initView() {
+
+        root = LayoutInflater.from(mContext).inflate(R.layout.view_upload_hook_table_view, null);
+        tableitem_jb_bh = (TextItemTableItem) root.findViewById(R.id.tableitem_jb_bh);
+        tableitem_jb_bh.setReadOnly();
+        tableitem_jb_bh.setTextViewName("接户井编号");
+        tableitem_jb_type = (TextItemTableItem) root.findViewById(R.id.tableitem_jb_type);
+        tableitem_jb_type.setReadOnly();
+        tableitem_jb_addr = (TextItemTableItem) root.findViewById(R.id.tableitem_jb_addr);
+        tableitem_jb_addr.setReadOnly();
+        textitem_dy_name = (TextItemTableItem) root.findViewById(R.id.textitem_dy_name);
+        textitem_dy_name.setReadOnly();
+        textitem_dy_name.setTextViewName("关联排水户名");
+        textitem_dy_type = (TextItemTableItem) root.findViewById(R.id.textitem_dy_type);
+        textitem_dy_type.setReadOnly();
+        textitem_dy_type.setTextViewName("排水户类型");
+
+        tableitem_current_time = (TextItemTableItem) root.findViewById(R.id.tableitem_current_time);
+        /**
+         * 最后修改时间
+         */
+        tableitem_last_modified_time = (TextItemTableItem) root.findViewById(R.id.tableitem_last_modified_time);
+        /**
+         * 填表人
+         */
+        tableitem_current_user = (TextItemTableItem) root.findViewById(R.id.tableitem_current_user);
+        /**
+         * 上报单位
+         */
+        tableitem_direct_org = (TextItemTableItem) root.findViewById(R.id.tableitem_direct_org);
+        tableitem_direct_org.setReadOnly();
+        /**
+         * 设施问题
+         */
+    }
+
+}

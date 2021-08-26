@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout android:id="@+id/ll_reporter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"/>
+
+            <TextView android:id="@+id/tv_reporter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                tools:text="上报人：吴亦凡 2021-05-06 15:22"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/ll_operation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <Button android:id="@+id/btn_reset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_blue"
+                android:layout_gravity="center_horizontal"
+                android:text="重置"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="1dp"/>
+
+            <Button android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_blue"
+                android:layout_gravity="center_horizontal"
+                android:text="保存"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

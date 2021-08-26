@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_background_color"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <com.bigkoo.convenientbanner.ConvenientBanner xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/convenientBanner"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:canLoop="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:alpha="0.7"
+                android:background="@drawable/alph_bg"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="1dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="1dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/user_head" />
+
+                <TextView
+                    android:id="@+id/daily_work_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e7e7e7"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/agmobile_white"
+                android:gravity="center_vertical"
+                android:padding="4dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_handling"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/colorPrimary"-->
+                    <!--android:paddingTop="6dp"-->
+                    <!--android:paddingBottom="6dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:background="@drawable/round_color_primary_rectangle"-->
+                    <!--android:text="待受理"-->
+                    <!--android:textSize="@dimen/text_size_third"-->
+                    <!--/>-->
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_event_unsign" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_handled"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_event_handling" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_handled_finish"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_event_finished" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_handled_uploaded"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_event_uploaded" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/rl_problem_finished"
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_event_finished" />
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/rl_problem_uploaded"
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_event_uploaded" />
+
+            </LinearLayout>
+
+            <include layout="@layout/include_comprehensive" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/dark_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_ps_shortcut"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/MainFragmentTitleLinearLayout">
+
+                        <ImageView
+                            style="@style/MainFragmentTitleImageView"
+                            android:layout_gravity="center_vertical"
+                            android:src="@mipmap/home_ic_quick_start" />
+
+                        <TextView
+                            style="@style/MainFragmentTitleTextView"
+                            android:text="管网巡检快捷"/>
+
+                    </LinearLayout>
+
+                    <include layout="@layout/include_home_divide" />
+
+                    <LinearLayout
+                        style="@style/MainFragmentLinearlayout"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <LinearLayout
+                            android:id="@+id/iv_upload_new_data"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_home_upload_data" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="数据新增-校核" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_upload_error_data"
+                            style="@style/MainFragmentImageView"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@mipmap/ic_correct_data"
+                            android:visibility="gone" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+                        <LinearLayout
+                            android:id="@+id/iv_upload_problem"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_upload_problem_small3" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="问题上报" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+
+                        <LinearLayout
+                            android:id="@+id/ic_modified_error_data"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_modified_error_data" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="专业数据修补测" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="#e7e7e7"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_psh_shortcut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/MainFragmentTitleLinearLayout">
+
+                        <ImageView
+                            style="@style/MainFragmentTitleImageView"
+                            android:layout_gravity="center_vertical"
+                            android:src="@mipmap/home_ic_quick_start" />
+
+                        <TextView
+                            style="@style/MainFragmentTitleTextView"
+                            android:text="快捷方式"/>
+
+                    </LinearLayout>
+
+                    <include layout="@layout/include_home_divide" />
+
+                    <LinearLayout
+                        style="@style/MainFragmentLinearlayout"
+                        android:orientation="horizontal"
+                        android:weightSum="6">
+
+                        <LinearLayout
+                            android:id="@+id/iv_psh_new_data"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_psh_home_upload_data" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="排水户管理" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+                        <LinearLayout
+                            android:id="@+id/ll_jbjpsdy"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_mian_guajie" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="排水单元管理" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+                        <LinearLayout
+                            android:id="@+id/ll_psdyjg"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:src="@mipmap/ic_public_affair"
+                                style="@style/MainFragmentImageView" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="排水单元监管" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/iv_psh_new_well"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_psh_home_upload_well" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="接驳井" />
+                        </LinearLayout>
+
+                        <View
+                            android:visibility="gone"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+
+                        <LinearLayout
+                            android:id="@+id/iv_psh_new_door_no"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_door_no" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="门牌" />
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:id="@+id/iv_psh_error_data"
+                            style="@style/MainFragmentImageView"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@mipmap/ic_correct_data"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/home_divider_color" />
+                    <LinearLayout
+                        style="@style/MainFragmentLinearlayout"
+                        android:orientation="horizontal"
+                        android:weightSum="6">
+
+                        <LinearLayout
+                            android:id="@+id/ll_psh_journal"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_patrol_journl2" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="日常巡检" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+
+                        <LinearLayout
+                            android:id="@+id/iv_local_draft"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_upload_problem_small3" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="本地草稿" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:visibility="visible"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/ll_psh_industry"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_patrol_journl2" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="待关联排水户" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/iv_psh_upload_problem"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_upload_problem_small3" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="问题上报" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/iv_psh_upload_problem1"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_upload_problem_small3" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="问题上报" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:visibility="gone"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_mian_guajie" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="单元挂接" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:visibility="gone"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView style="@style/MainFragmentImageView" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="管道养护" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/home_divider_color" />
+                    <LinearLayout
+                        style="@style/MainFragmentLinearlayout"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:weightSum="6">
+                        <LinearLayout
+                            android:visibility="visible"
+                            android:id="@+id/ll_ground_fire"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:src="@mipmap/ic_public_affair"
+                                style="@style/MainFragmentImageView" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="地上式消防栓" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+
+                        <LinearLayout
+                            android:visibility="invisible"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_upload_problem_small3" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="本地草稿" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:visibility="visible"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+                        <LinearLayout
+                            android:visibility="gone"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_patrol_journl2" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="待关联排水户" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:visibility="invisible"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_patrol_journl2" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="日常巡检" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_upload_problem_small3" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="问题上报" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:visibility="gone"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/ll_jbjpsdy1"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_mian_guajie" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="单元挂接" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/main_yh"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView style="@style/MainFragmentImageView" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="管道养护" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/home_divider_color" />
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        style="@style/MainFragmentLinearlayout"
+                        android:orientation="horizontal"
+                        android:id="@+id/group_ground_fire1"
+                        android:weightSum="5">
+                        <LinearLayout
+                            android:visibility="visible"
+                            android:id="@+id/ll_ground_fire2"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:src="@mipmap/ic_public_affair"
+                                style="@style/MainFragmentImageView" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="地上式消防栓" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_psh_industry1"
+                            android:visibility="gone"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_patrol_journl2" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="待关联排水户" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+
+
+                        <LinearLayout
+                            android:id="@+id/iv_local_draft1"
+                            android:visibility="invisible"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <ImageView
+                                style="@style/MainFragmentImageView"
+                                android:src="@mipmap/ic_upload_problem_small3" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="本地草稿" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:visibility="gone"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/home_divider_color" />
+
+                        <LinearLayout
+                            android:visibility="invisible"
+                            android:id="@+id/ll_ground_fire1"
+                            style="@style/MainFragmentImageViewOuterContainer"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:src="@mipmap/ic_public_affair"
+                                style="@style/MainFragmentImageView" />
+
+                            <TextView
+                                style="@style/MainFragmentTextView"
+                                android:text="地上式消防栓" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MainFragmentTitleLinearLayout"
+                android:layout_marginLeft="0dp"
+                android:background="@color/dark_white">
+
+                <ImageView
+                    style="@style/MainFragmentTitleImageView"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/ic_work_news" />
+
+                <TextView
+                    android:id="@+id/tv_dynamic_title"
+                    style="@style/MainFragmentTitleTextView"
+                    android:text="动态" />
+
+                <!--<ImageView-->
+                <!--style="@style/MainFragmentImageViewBesideTitle"-->
+                <!--android:src="@mipmap/home_ic_quick_start"/>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/dark_white"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="2dp"
+                        app:tabBackground="@color/dark_white"
+                        app:tabGravity="fill"
+                        app:tabIndicatorColor="@color/colorPrimary"
+                        app:tabIndicatorHeight="1dp"
+                        app:tabSelectedTextColor="@color/colorPrimary"
+                        app:tabTextAppearance="@style/MainFragmentTabLayoutTextStyle"
+                        app:tabTextColor="#000" />
+                </LinearLayout>
+
+                <com.augurit.agmobile.gzpssb.worknews.CustomViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="#ffffff" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

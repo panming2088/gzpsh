@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tabTotal"
+    style="@style/JbjPsdySewerageUserListHeaderTab.Frame"
+    android:layout_width="wrap_content">
+
+    <com.augurit.agmobile.gzpssb.jbjpsdy.CustomTextView
+        android:id="@+id/title"
+        style="@style/JbjPsdySewerageUserListHeaderTab.Text"
+        android:layout_width="wrap_content"
+        android:text="总数"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_def_text" />
+
+    <com.augurit.agmobile.gzpssb.jbjpsdy.CustomTextView
+        android:id="@+id/value"
+        android:layout_gravity="center_horizontal"
+        style="@style/JbjPsdySewerageUserListHeaderTab.Text2"
+        android:layout_width="wrap_content"
+        android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_def_text"
+        tools:text="22" />
+
+</FrameLayout>
